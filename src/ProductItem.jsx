@@ -1,26 +1,24 @@
 import React from 'react';
 
-function ProductItem({ item }) {
+import ProductItemContainer from './style/ProductItemContainer';
+
+const ProductItem = ({ item }) => {
   const {
-    name, sellerName, price, minBuyNumber, imageUrl,
+    name, sellerName, imageUrl,
   } = item;
 
   return (
-    <div className="productItem">
+    <ProductItemContainer>
       <div
-        className="image"
-        style={{
-          backgroundImage: `url(${imageUrl})`,
-        }}
+        className="itemImage"
+        style={{ backgroundImage: `url(${imageUrl})` }}
       />
-      <div className="productInfo">
+      <div className="itemInfo">
         <span className="name">{name}</span>
         <span className="sellerName">{sellerName}</span>
-        <span className="Price">{price}</span>
-        <span className="minBuyNumber">{minBuyNumber}</span>
       </div>
-    </div>
+    </ProductItemContainer>
   );
-}
+};
 
 export default ProductItem;
