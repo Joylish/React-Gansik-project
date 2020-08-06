@@ -1,11 +1,13 @@
 import React from 'react';
 
 import CategoryItems from './CategoryItems';
+import PreviewProduct from './PreviewProduct';
 
-export default function Homepage() {
-  return (
-    <>
-      <CategoryItems />
-    </>
-  );
-}
+const Homepage = () => (
+  <>
+    <CategoryItems />
+    <PreviewProduct />
+  </>
+);
+
+export default Homepage;
