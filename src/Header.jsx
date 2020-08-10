@@ -14,7 +14,7 @@ export default function Header() {
         <Link className="option" to="/login">
           로그인
         </Link>
-        <Link className="option" to="/cart">
+        <Link className="option" to="/WishListPage">
           관심상품
         </Link>
       </div>

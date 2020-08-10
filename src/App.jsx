@@ -3,7 +3,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Homepage from './Homepage';
-import CartPage from './CartPage';
+import WishListPage from './WishListPage';
 import LoginPage from './LoginPage';
 import Header from './Header';
 import ProductItemsPage from './ProductItemsPage';
@@ -18,7 +18,7 @@ export default function App() {
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route path="/login" component={LoginPage} />
-          <Route path="/cart" component={CartPage} />
+          <Route path="/wishlist" component={WishListPage} />
           <Route path="/product/:productId" component={ProductItemsPage} />
         </Switch>
       </div>
