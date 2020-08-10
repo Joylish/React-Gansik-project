@@ -1,44 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import {
-  EmailLabel,
-  PasswordLabel,
-  LoginButton,
-} from './style/LoginFormContainer';
+import InputForm from './InputForm';
+import Button from './style/Button';
 
-export default function LoginForm({ onChange, onSubmit }) {
-  function handleChange(event) {
+import LoginFormContainer from './style/LoginFormContainer';
+
+const LoginForm = () => {
+  const [state, setState] = useState({
+    email: '',
+    password: '',
+  });
+
+  const handleChange = (event) => {
     const { target: { name, value } } = event;
+    setState({
+      ...state,
+      [name]: value,
+    });
+  };
 
-    onChange({ name, value });
-  }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setState({
+      email: '',
+      password: '',
+    });
+  };
+
+  const { email, password } = state;
 
   return (
-    <>
-      <div>
-        <EmailLabel htmlFor="login-email">Email</EmailLabel>
-        <input
-          type="email"
-          id="login-email"
+    <LoginFormContainer>
+      <h2 className="title">로그인</h2>
+      <form onSubmit={handleSubmit}>
+        <InputForm
           name="email"
+          type="email"
           onChange={handleChange}
+          value={email}
+          required
         />
-      </div>
-      <div>
-        <PasswordLabel htmlFor="login-password">Password</PasswordLabel>
-        <input
-          type="password"
-          id="login-password"
+        <InputForm
           name="password"
+          type="password"
           onChange={handleChange}
+          value={password}
+          required
         />
-      </div>
-      <LoginButton
-        type="button"
-        onClick={onSubmit}
-      >
-        Login
-      </LoginButton>
-    </>
+        <Button
+          type="submit"
+        >
+          로그인
+        </Button>
+      </form>
+    </LoginFormContainer>
   );
-}
+};
+
+export default LoginForm;
