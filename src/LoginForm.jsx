@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
 import InputForm from './InputForm';
 import Button from './style/Button';
 
 import LoginFormContainer from './style/LoginFormContainer';
+
+import { signInWithGoogle } from './firebase/firebase.utills';
 
 const LoginForm = () => {
   const [state, setState] = useState({
@@ -11,21 +13,21 @@ const LoginForm = () => {
     password: '',
   });
 
-  const handleChange = (event) => {
+  const handleChange = useCallback((event) => {
     const { target: { name, value } } = event;
     setState({
       ...state,
       [name]: value,
     });
-  };
+  }, [state]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = useCallback((event) => {
     event.preventDefault();
     setState({
       email: '',
       password: '',
     });
-  };
+  }, [state]);
 
   const { email, password } = state;
 
@@ -47,11 +49,15 @@ const LoginForm = () => {
           value={password}
           required
         />
-        <Button
-          type="submit"
-        >
-          로그인
-        </Button>
+        <div className="login-buttons">
+          <Button type="submit">로그인</Button>
+          <Button
+            onClick={signInWithGoogle}
+            isOAuth
+          >
+            구글 계정으로 로그인
+          </Button>
+        </div>
       </form>
     </LoginFormContainer>
   );
