@@ -1,8 +1,8 @@
 import React from 'react';
 
-import ProductItem from './ProductItem';
+import Item from '../components/Item';
 
-function ProductItemsPage({ product }) {
+function ItemsPage({ product }) {
   const { title, productItems } = product;
 
   return (
@@ -11,7 +11,7 @@ function ProductItemsPage({ product }) {
       <div className="productItems">
         {
           productItems.map((item) => (
-            <ProductItem key={item.id} item={item} />
+            <Item key={item.id} item={item} />
           ))
         }
       </div>
@@ -19,4 +19,4 @@ function ProductItemsPage({ product }) {
   );
 }
 
-export default ProductItemsPage;
+export default ItemsPage;

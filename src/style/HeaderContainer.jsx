@@ -28,7 +28,14 @@ const Container = styled.header({
     justifyContent: 'flex-end',
 
     '.option': {
+      fontSize: '1em',
       padding: '10px 15px',
+      cursor: 'pointer',
+    },
+    button: {
+      border: '0',
+      outline: '0',
+      backgroundColor: 'white',
     },
   },
 });

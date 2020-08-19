@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-const ProductCollectionContainer = styled.div(() => ({
+const ItemCollectionContainer = styled.div(() => ({
   display: 'flex',
   flexDirection: 'column',
   marginBottom: '5em',
@@ -16,4 +16,4 @@ const ProductCollectionContainer = styled.div(() => ({
   },
 }));
 
-export default ProductCollectionContainer;
+export default ItemCollectionContainer;

@@ -1,11 +1,11 @@
 import React, { useState, useCallback } from 'react';
 
 import InputForm from './InputForm';
-import Button from './style/Button';
 
-import LoginFormContainer from './style/LoginFormContainer';
+import Button from '../style/Button';
+import LoginFormContainer from '../style/LoginFormContainer';
 
-import { signInWithGoogle } from './firebase/firebase.utills';
+import { signInWithGoogle } from '../firebase/firebase.utills';
 
 const LoginForm = () => {
   const [state, setState] = useState({
@@ -52,6 +52,7 @@ const LoginForm = () => {
         <div className="login-buttons">
           <Button type="submit">로그인</Button>
           <Button
+            type="button"
             onClick={signInWithGoogle}
             isOAuth
           >

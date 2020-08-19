@@ -15,8 +15,32 @@ const gansikConfig = {
 
 firebase.initializeApp(gansikConfig);
 
-export const auth = firebase.auth();
-export const firestore = firebase.firestore();
+export const auth = firebase.auth(); // 파이어베이스 콘솔의 development의 auth
+export const firestore = firebase.firestore(); // 파아베이스의 developmnet의 DB 사용
+
+export const createUserProfileDocument = async (userAuth, additionalData) => {
+  if (!userAuth) return;
+
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+
+  const snapShot = await userRef.get();
+
+  // db에 없는 새로운 사용자일 경우 db에 저장
+  if (!snapShot.exists) {
+    const { displayName, email } = userAuth;
+    const createdAt = new Date();
+    try {
+      await userRef.set({
+        displayName,
+        email,
+        createdAt,
+        ...additionalData,
+      });
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+};
 
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import InputFormContainer from './style/InputFormContainer';
+import InputFormContainer from '../style/InputFormContainer';
 
 const InputForm = ({ name, handleChange, ...otherProps }) => (
   <InputFormContainer>

@@ -2,9 +2,9 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { auth } from './firebase/firebase.utills';
+import { auth } from '../firebase/firebase.utills';
 
-import HeaderContainer from './style/HeaderContainer';
+import HeaderContainer from '../style/HeaderContainer';
 
 export default function Header({ authUser }) {
   return (

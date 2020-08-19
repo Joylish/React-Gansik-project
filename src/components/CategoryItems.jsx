@@ -2,9 +2,9 @@ import React from 'react';
 
 import CategoryItem from './CategoryItem';
 
-import categories from '../fixtures/categories';
+import categories from '../../fixtures/categories';
 
-import CategoryItemsContainer from './style/CategoryItemsContainer';
+import CategoryItemsContainer from '../style/CategoryItemsContainer';
 
 function CategoryItems() {
   return (

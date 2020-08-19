@@ -1,14 +1,14 @@
 import React from 'react';
 
-import ProductItemContainer from './style/ProductItemContainer';
+import ItemContainer from '../style/ItemContainer';
 
-const ProductItem = ({ item }) => {
+const Item = ({ item }) => {
   const {
     name, sellerName, imageUrl,
   } = item;
 
   return (
-    <ProductItemContainer>
+    <ItemContainer>
       <div
         className="itemImage"
         style={{ backgroundImage: `url(${imageUrl})` }}
@@ -17,8 +17,8 @@ const ProductItem = ({ item }) => {
         <span className="name">{name}</span>
         <span className="sellerName">{sellerName}</span>
       </div>
-    </ProductItemContainer>
+    </ItemContainer>
   );
 };
 
-export default ProductItem;
+export default Item;

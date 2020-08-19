@@ -2,7 +2,7 @@ import React from 'react';
 
 import { withRouter } from 'react-router-dom';
 
-import CategoryItemContainer from './style/CategoryItemContainer';
+import CategoryItemContainer from '../style/CategoryItemContainer';
 
 function CategoryItem({
   category, history, match,

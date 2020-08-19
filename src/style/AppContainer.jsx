@@ -8,6 +8,9 @@ const AppContainer = styled.div({
     textDecoration: 'none',
     color: 'black',
   },
+  '& *': {
+    boxSizing: 'border-box',
+  },
 });
 
 export default AppContainer;
