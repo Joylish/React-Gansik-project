@@ -28,6 +28,7 @@ const Container = styled.header({
     justifyContent: 'flex-end',
 
     '.option': {
+      color: 'gray',
       fontSize: '1em',
       padding: '10px 15px',
       cursor: 'pointer',
